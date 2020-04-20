@@ -4,10 +4,11 @@
   "description": "Match EPS",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js",
+    "prod": "webpack --config build/webpack.config.prod.js",
     "start": "npm run dev",
-    "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "eslint": "eslint --ext .js,.vue src",
+    "stylelint": "stylelint --syntax=scss"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -38,6 +39,7 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^3.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -51,6 +53,7 @@
     "sass-loader": "^7.3.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "style-loader": "^1.1.4",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^15.9.1",
@@ -77,13 +80,13 @@
     }
   },
   "lint-staged": {
-    "ui.apps/src/main/content/jcr_root/apps/commercial/*/.{js,vue,scss}": [
+    "FrontEnd/matcheps/src/*/.{js,vue,scss}": [
       "prettier --write"
     ],
-    "ui.apps/src/main/content/jcr_root/apps/commercial/*/.{js,vue}": [
-      "eslint --fix"
+    "FrontEnd/matcheps/src/*/.{js,vue}": [
+      "eslint"
     ],
-    "ui.apps/src/main/content/jcr_root/apps/commercial/*/.scss": [
+    "FrontEnd/matcheps/src/*/.scss": [
       "stylelint --syntax=scss"
     ]
   }
