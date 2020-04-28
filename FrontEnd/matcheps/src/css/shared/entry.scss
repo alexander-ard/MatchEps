@@ -1,0 +1,11 @@
+
+//Entry de archivos SCSS.
+
+//Estilos compartidos de toda la app
+@import 'main.scss';
+
+
+//Entries
+@import '@css/core/landing.scss';
+@import '@css/core/nav.scss';
+@import '@css/core/carousel.scss';

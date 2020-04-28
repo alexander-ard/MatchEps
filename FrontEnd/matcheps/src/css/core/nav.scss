@@ -1,0 +1,30 @@
+.nav {
+  height: $nav-height;
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem 1rem 5rem;
+
+  &__logo {
+    display: flex;
+    background-image: url('/icons/logo.png');
+  }
+
+  &__btnGroup {
+    display: flex;
+    flex-direction: row;
+
+    &__btn {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      color: $white;
+      font-size: 2em;
+      padding: 1rem;
+
+      &--active {
+
+      }
+    }
+  }
+}
