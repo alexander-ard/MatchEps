@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@components/home';
+import Landing from '@components/core/Landing';
+import Home from '@components/core/Home';
 
 Vue.use(Router);
 
@@ -8,7 +9,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'landing',
+      component: Landing,
+    },
+    {
+      path: '/home',
+      name: 'home',
       component: Home,
     },
   ],
