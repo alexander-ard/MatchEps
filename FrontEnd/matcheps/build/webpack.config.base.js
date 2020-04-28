@@ -3,6 +3,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+var path = require('path');
 
 const utils = require('./utils');
 
@@ -13,35 +14,23 @@ module.exports = {
       '@utils': utils.resolve('src/utils'),
       '@router': utils.resolve('src/router'),
       '@components': utils.resolve('src/components'),
-      'vue': 'vue/dist/vue.js'
+      '@css': utils.resolve('src/css'),
+      '@images': utils.resolve('src/assets'),
+      vue: 'vue/dist/vue.js',
     },
   },
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
-        use: 'eslint-loader',
-        enforce: 'pre',
-      },
-      {
         test: /\.vue$/,
         use: 'vue-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: utils.assetsPath('img/[name].[hash:7].[ext]'),
-          },
         },
       },
       {
@@ -67,10 +56,24 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
+          'style-loader', 
+          'css-loader?url=false', 
+          'sass-loader'
         ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        exclude: [
+          path.resolve('src/assets', './node_modules'),
+        ],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name]-[hash].[ext]',
+            outputPath: '../',
+            publicPath: '/dist',
+          },
+        },
       },
     ],
   },

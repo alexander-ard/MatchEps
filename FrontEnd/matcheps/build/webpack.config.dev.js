@@ -9,7 +9,7 @@ const PORT = 8080
 
 module.exports = merge(baseConfig, {
   mode: 'development',
-
+  devtool: 'inline-source-map',
   devServer: {
     clientLogLevel: 'warning',
     hot: true,
