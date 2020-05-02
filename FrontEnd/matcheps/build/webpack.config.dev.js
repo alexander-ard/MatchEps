@@ -3,9 +3,10 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
+const config = require('../config')
 
-const HOST = 'localhost'
-const PORT = 8080
+const HOST = process.env.HOST
+const PORT = process.env.PORT && Number(process.env.PORT)
 
 module.exports = merge(baseConfig, {
   mode: 'development',
@@ -15,8 +16,8 @@ module.exports = merge(baseConfig, {
     hot: true,
     contentBase: 'dist',
     compress: true,
-    host: HOST,
-    port: PORT,
+    host: HOST || config.dev.host,
+    port: PORT || config.dev.port,
     open: true,
     overlay: { warnings: false, errors: true },
     publicPath: '/',
@@ -43,6 +44,9 @@ module.exports = merge(baseConfig, {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': require('../config/dev.env')
+    }),
     new webpack.HotModuleReplacementPlugin()
   ]
 })

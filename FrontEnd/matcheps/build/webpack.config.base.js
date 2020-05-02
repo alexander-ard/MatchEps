@@ -2,6 +2,7 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const config = require('../config');
 const { VueLoaderPlugin } = require('vue-loader');
 var path = require('path');
 
@@ -15,7 +16,8 @@ module.exports = {
       '@router': utils.resolve('src/router'),
       '@components': utils.resolve('src/components'),
       '@css': utils.resolve('src/css'),
-      '@images': utils.resolve('src/assets'),
+      '@images': utils.resolve('src/assets/img'),
+      '@icons': utils.resolve('src/assets/icons'),
       vue: 'vue/dist/vue.js',
     },
   },
@@ -55,26 +57,19 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader', 
-          'css-loader?url=false', 
-          'sass-loader'
-        ],
+        use: ['style-loader', 'css-loader?url=false', 'sass-loader'],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        exclude: [
-          path.resolve('src/assets', './node_modules'),
-        ],
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name]-[hash].[ext]',
-            outputPath: '../',
-            publicPath: '/dist',
-          },
-        },
-      },
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 5000
+            }
+          }
+        ]
+      }
     ],
   },
 
@@ -87,8 +82,8 @@ module.exports = {
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([
       {
-        from: utils.resolve('static/img'),
-        to: utils.resolve('dist/static/img'),
+        from: utils.resolve('src/assets'),
+        to: utils.resolve('dist/assets'),
         toType: 'dir',
       },
     ]),
