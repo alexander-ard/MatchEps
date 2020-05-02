@@ -1,10 +1,11 @@
 {
   "name": "matcheps",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Match EPS",
+  "author": "alexander-ard",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js  --mode=development",
+    "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js",
     "prod": "webpack --config build/webpack.config.prod.js",
     "start": "npm run dev",
     "eslint": "eslint --ext .js,.vue src",
@@ -12,7 +13,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "chart.js": "^2.9.3",
     "vue": "^2.5.2",
+    "vue-chartjs": "^3.5.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
