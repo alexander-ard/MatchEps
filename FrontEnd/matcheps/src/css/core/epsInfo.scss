@@ -1,0 +1,13 @@
+
+.epsInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0.5em;
+
+    &__epsName {
+        font-size: 3em;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+}

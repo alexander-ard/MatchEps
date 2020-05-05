@@ -1,30 +1,101 @@
 .nav {
   height: $nav-height;
-  background-color: $dark-blue;
+  background-color: $primary;
+  color: $white;
   display: flex;
-  justify-content: space-between;
-  padding: 1rem 5rem 1rem 5rem;
+  width: 100%;
+
+  @include media('>phone') {
+    justify-content: flex-end;
+  }
+
+  &__btnSidebar {
+    font-size: 2em;
+    align-self: flex-end;
+    color: $white;
+    background-color: $primary;
+    border: none;
+    margin: 0.25em 0.25em 0 0;
+
+    @include media('>phone') {
+      display: none;
+    } 
+  }
 
   &__logo {
     display: flex;
-    background-image: url('/icons/logo.png');
   }
 
   &__btnGroup {
     display: flex;
     flex-direction: row;
+    transition: height 0.5s linear;
 
     &__btn {
       display: flex;
       background-color: transparent;
       border: none;
       color: $white;
-      font-size: 2em;
-      padding: 1rem;
+      font-size: 1.5em;
+      padding: 0 1em 0 1em;
 
-      &--active {
+      @include media('<=phone') {
+        padding: 1em;
+        border-bottom: 1px solid $light-gray;
+      }
 
+      &.--active {
+        &:after {
+          content: '';
+          position: absolute;
+          top: #{strip-unit($nav-height)}rem;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 20px solid $primary;
+          clear: both;
+
+          @include media('<=phone') {
+            display: none;
+          }
+        }
       }
     }
+
+    &.--hidden {
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @include media('<=phone') {
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      z-index: 100;
+      overflow: hidden;
+    }
+  }
+
+  &[data-home='true'] {
+    background-color: $white;
+
+    .nav__btnGroup__btn {
+      color: $primary;
+
+      &.--active {
+        &:after {
+          border-top: 20px solid $white;
+        }
+      }
+    }
+    
+    .nav__btnSidebar {      
+      color: $primary;
+      background-color: $white;
+    }
+  }
+
+  @include media('<=phone') {
+    height: auto;
+    flex-direction: column;
   }
 }

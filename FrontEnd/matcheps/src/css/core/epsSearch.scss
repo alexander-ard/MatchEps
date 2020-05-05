@@ -1,0 +1,24 @@
+.epsSearch {
+  &__header {
+    display: flex;
+    padding: 3em;
+
+    &__text {
+      margin: auto;
+      font-size: 3em;
+
+      @include media('<=phone') {
+        font-size: 2em;
+      }
+    }
+  }
+
+  &__btnWrapper {
+    padding-top: 2em;
+    display: flex;
+
+    &__startBtn {
+      margin: auto;
+    }
+  }
+}

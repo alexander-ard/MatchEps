@@ -1,0 +1,32 @@
+.choices {
+    width: 85%;
+    margin: auto;
+  
+    &__list {
+      &--multiple {
+        .choices__item {
+          font-size: 2em;
+          background-color: $primary;
+        }
+      }
+    }
+  
+    &__item--selectable {
+      font-size: 2em !important;
+    }
+  
+    &__button {
+      font-size: 1em;
+    }
+  
+    &__inner,
+    &__input {
+      background-color: white;
+      min-width: 20em;
+    }
+  
+    &__input,
+    .choices__item--choice.has-no-results {
+      font-size: 2em;
+    }
+  }

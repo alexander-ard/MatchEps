@@ -1,8 +1,11 @@
-$nav-height: 5em;
-
+$nav-height: 4rem;
+$body-height: calc(100vh - #{$nav-height});
 
 // Colors
 $dark-purple: #310951;
-$dark-blue: #093242;
+$primary: #006871;
+$secondary: #3dccc2;
+$light-mint: #d6fffc;
 $white: #FFF;
-$mint-green: #3dccc2;
+$light-gray: #dcdcdc;
+$text-color: #495057;

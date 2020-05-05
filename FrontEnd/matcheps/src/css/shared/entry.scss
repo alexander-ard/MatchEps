@@ -1,11 +1,16 @@
 
 //Entry de archivos SCSS.
 
-//Estilos compartidos de toda la app
+@import "../lib/breakpoints.scss";
+@import '~choices.js/public/assets/styles/choices';
+
+@import 'functions.scss';
 @import 'main.scss';
-
-
-//Entries
-@import '@css/core/landing.scss';
 @import '@css/core/nav.scss';
 @import '@css/core/carousel.scss';
+@import '@css/charts/chart.scss';
+@import '@css/core/epsInfo.scss';
+@import '@css/core/home.scss';
+@import '@css/shared/choices.scss';
+@import '@css/core/epsSearch.scss';
+@import '@css/core/epsMatch.scss';
