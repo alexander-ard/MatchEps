@@ -4,7 +4,9 @@ import '@fortawesome/fontawesome-free/js/all';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import { firestorePlugin } from 'vuefire';
 
+Vue.use(firestorePlugin);
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
 /* eslint-disable no-new */
