@@ -3,7 +3,7 @@
     <span class="epsInfo__epsName">
       {{ epsData.name }}
     </span>
-    <LineChart :options="chartOptions" v-if="eps" :data="afiliatesChart" />
+    <LineChart :title="'Cantidad de afiliados por año'" v-if="eps" :data="afiliatesChart"/>
   </div>
 </template>
 
@@ -20,12 +20,6 @@ export default {
   data() {
     return {
       eps: false,
-      chartOptions: {
-        responsive: true,
-        maintainAspectRatio: false,
-        fill: false,
-        steppedLine: true,
-      },
     };
   },
   mounted() {
@@ -46,7 +40,8 @@ export default {
         datasets: [
           {
             label: 'Nro. de afiliados',
-            borderColor: '#006871',
+            borderColor: this.eps.defaultColor,
+            backgroundColor: `${this.eps.defaultColor}`,
             data: Object.values(this.eps.afiliados),
           },
         ],
