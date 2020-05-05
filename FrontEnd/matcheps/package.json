@@ -9,7 +9,7 @@
     "prod": "webpack --config build/webpack.config.prod.js",
     "start": "npm run dev",
     "eslint": "eslint --ext .js,.vue src",
-    "stylelint": "stylelint --syntax=scss"
+    "stylelint": "stylelint 'src/**/*.scss' --syntax scss"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
@@ -25,11 +25,12 @@
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-preset-env": "^1.3.2",
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
+    "choices.js": "^9.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.15.0",
@@ -40,12 +41,15 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-vue": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "fibers": "^5.0.0",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^3.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
     "mini-css-extract-plugin": "^0.9.0",
     "node-notifier": "^5.1.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",
@@ -55,11 +59,13 @@
     "prettier": "2.0.4",
     "resolve-url-loader": "^3.1.1",
     "rimraf": "^2.6.0",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "8.0.2",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "siema": "^1.5.1",
     "style-loader": "^1.1.4",
+    "stylelint": "^13.3.3",
+    "stylelint-scss": "^3.17.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.9",
     "vue-loader": "^15.9.1",
@@ -80,20 +86,20 @@
     "last 2 versions",
     "not ie <= 8"
   ],
+  "lint-staged": {
+    "src/*/.{js,vue,scss}": [
+      "prettier --write"
+    ],
+    "src/*/.{js,vue}": [
+      "eslint"
+    ],
+    "src/*/.scss": [
+      "stylelint 'src/**/*.scss' --syntax scss"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "FrontEnd/matcheps/src/*/.{js,vue,scss}": [
-      "prettier --write"
-    ],
-    "FrontEnd/matcheps/src/*/.{js,vue}": [
-      "eslint"
-    ],
-    "FrontEnd/matcheps/src/*/.scss": [
-      "stylelint --syntax=scss"
-    ]
   }
 }

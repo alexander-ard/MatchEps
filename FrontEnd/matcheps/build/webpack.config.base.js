@@ -57,7 +57,19 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader?url=false', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader?url=false',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('node-sass'),
+              sassOptions: {
+                fiber: require('fibers'),
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -65,14 +77,13 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 5000
-            }
-          }
-        ]
-      }
+              limit: 5000,
+            },
+          },
+        ],
+      },
     ],
   },
-
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
