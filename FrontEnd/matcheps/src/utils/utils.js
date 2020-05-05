@@ -1,5 +1,5 @@
 export default {
-    getApiURL() {
-        return process.env.API_ROOT;
-    }
-}
+  getApiURL() {
+    return process.env.API_ROOT;
+  },
+};
