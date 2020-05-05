@@ -1,13 +1,19 @@
-
 .epsInfo {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 0.5em;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 25px;
+  margin: 5px;
 
-    &__epsName {
-        font-size: 3em;
-        font-weight: bold;
-        margin: 0 auto;
-    }
+  @include media('<=phone') {
+    width: 100vh;
+    scroll-snap-align: start;
+    border: none;
+  }
+
+  &__epsName {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0 auto;
+  }
 }

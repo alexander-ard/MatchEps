@@ -63,6 +63,11 @@ textarea {
   flex: 1;
   height: 100vh;
   overflow: auto;
+  
+  @include media('<=phone') {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 .main {

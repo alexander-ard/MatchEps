@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-
+  
   @include media('<=phone') {
-    flex-direction: column;
+    min-width: 100vh;
+    max-width: 100vh;
+    scroll-snap-type: x mandatory;
+    overflow: auto;
   }
 }
