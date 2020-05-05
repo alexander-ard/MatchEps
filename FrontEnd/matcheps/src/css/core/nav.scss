@@ -64,6 +64,11 @@
     &.--hidden {
       height: 1px;
       overflow: hidden;
+
+      @include media('>phone') {
+        height: $nav-height;
+        display: flex;
+      }
     }
 
     @include media('<=phone') {

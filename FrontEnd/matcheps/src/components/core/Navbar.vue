@@ -1,21 +1,18 @@
 <template>
   <div class="nav" :data-home="currentRoute === 'home'">
-
     <button class="nav__btnSidebar" @click="toogleMenu">
       <i class="fas fa-bars"></i>
     </button>
 
-    <div
-      class="nav__btnGroup"
-      :class=" {'--hidden': hiddenMenu }"
-    >
+    <div class="nav__btnGroup" :class="{ '--hidden': hiddenMenu }">
       <router-link
         tag="button"
         :to="'/'"
         class="nav__btnGroup__btn"
         :class="{ '--active': currentRoute === 'home' }"
+        @click="hideMenu"
       >
-        Home
+        <span @click="hideMenu">Home</span>
       </router-link>
 
       <router-link
@@ -24,7 +21,7 @@
         class="nav__btnGroup__btn"
         :class="{ '--active': currentRoute === 'eps-search' }"
       >
-        Eps
+        <span @click="hideMenu">Eps</span>
       </router-link>
 
       <router-link
@@ -32,8 +29,9 @@
         :to="'/opiniones'"
         class="nav__btnGroup__btn"
         :class="{ '--active': currentRoute === 'opiniones' }"
+        @click="hideMenu"
       >
-        Opiniones
+        <span @click="hideMenu">Opiniones</span>
       </router-link>
     </div>
   </div>
@@ -58,6 +56,9 @@ export default {
   methods: {
     toogleMenu() {
       this.hiddenMenu = !this.hiddenMenu;
+    },
+    hideMenu() {
+      this.hiddenMenu = true;
     },
   },
 };
