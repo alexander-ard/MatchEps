@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Navbar/>
-    <router-view/>
+    <div id="main-content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -9,11 +11,12 @@
   @import '@css/shared/entry.scss';
 </style>
 
+
 <script>
 
 import Navbar from './components/core/Navbar';
 
 export default {
-  components: { Navbar }
-}
+  components: { Navbar },
+};
 </script>
