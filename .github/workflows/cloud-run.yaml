@@ -1,0 +1,2 @@
+- name: Setup Google Cloud SDK
+  uses: mathrix-education/setup-gcloud@1.1.2
