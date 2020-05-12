@@ -6,11 +6,22 @@
 
 @import 'functions.scss';
 @import 'main.scss';
+
+@import '@css/charts/chart.scss';
+
 @import '@css/core/nav.scss';
 @import '@css/core/carousel.scss';
-@import '@css/charts/chart.scss';
 @import '@css/core/epsInfo.scss';
 @import '@css/core/home.scss';
-@import '@css/shared/choices.scss';
 @import '@css/core/epsSearch.scss';
 @import '@css/core/epsMatch.scss';
+@import '@css/core/landing.scss';
+@import '@css/core/sidebar.scss';
+@import '@css/core/locations.scss';
+
+@import '@css/shared/choices.scss';
+@import '@css/shared/listFilter.scss';
+
+@import '@css/comments/comments.scss';
+@import '@css/comments/newComment.scss';
+@import '@css/comments/singleComment.scss';

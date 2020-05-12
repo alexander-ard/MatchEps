@@ -1,46 +1,320 @@
 {
-    "eps": [
-        {
-            "id": 1,
-            "name": "Compensar EPS",
-            "afiliados": {
-                "2017": "1968927",
-                "2018": "1987452",
-                "2019": "2127010"
-            },
-            "ranking": {
-                "total": "7",
-                "oportunidad": "5",
-                "satisfaccion": "7",
-                "acceso": "6"
-            }
-        },
-        {
-            "id": 2,
-            "name": "Famisanar EPS",
-            "afiliados": {
-                "2017": "1123527",
-                "2018": "1123552",
-                "2019": "2123510"
-            }
-        },
-        {
-            "id": 3,
-            "name": "EPS Sura"  ,
-            "afiliados": {
-                "2017": "1912427",
-                "2018": "1912452",
-                "2019": "2112410"
-            }        
-        },
-        {
-            "id": 4,
-            "name": "Sanitas"  ,
-            "afiliados": {
-                "2017": "12568927",
-                "2018": "12587452",
-                "2019": "12527010"
-            }        
-        }
-    ]
+  "eps": [
+    {
+      "id": 1,
+      "name": "Compensar EPS",
+      "defaultColor": "#ff4000",
+      "defaultColorRGBA": "rgba(235, 64, 52, 0.25)",
+      "afiliados": {
+        "2017": "1968927",
+        "2018": "1987452",
+        "2019": "2127010"
+      },
+      "ranking": {
+        "total": "7",
+        "oportunidad": "5",
+        "satisfaccion": "7",
+        "acceso": "6"
+      },
+      "services": [
+        "Programas de Promoción y Prevención tales como: Salud de la Mujer, Planificación Familiar, Crecimiento y Desarrollo entre otros.",
+        "Atención Integral a la gestante.",
+        "Vacunación definida en el Plan Ampliado de Inmunizaciones PAI.",
+        "Consulta de Medicina General y Especializada.",
+        "Atención de Urgencias en Red Hospitalaria.",
+        "Laboratorio Clínico.",
+        "Radiología, ecografías, medicina nuclear y escanografía.",
+        "Apoyo terapéutico: Terapia física, respiratoria y del lenguaje.",
+        "Prevención en salud oral.",
+        "Asesoría en salud ocupacional.",
+        "Atención de accidentes de tránsito o trabajo con recobro al SOAT o a la ARP, respectivamente.",
+        "Hospitalización y cirugía.",
+        "Medicamentos."
+      ],
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "158",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "67"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "29",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "30"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "18",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "79"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "23",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "80"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Famisanar EPS",
+      "defaultColor": "#00a7b6",
+      "defaultColorRGBA": "rgba(0, 167, 182, 0.25)",
+      "afiliados": {
+        "2017": "1123527",
+        "2018": "1123552",
+        "2019": "2123510"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "126",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "81"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "29",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "41"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "51",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "123"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "51",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "78"
+      }
+    },
+    {
+      "id": 3,
+      "name": "EPS Sura",
+      "defaultColor": "#f6bf22",
+      "defaultColorRGBA": "rgba(246, 191, 34, 0.25)",
+      "afiliados": {
+        "2017": "1912427",
+        "2018": "1912452",
+        "2019": "2112410"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "7",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "3"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "10",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "13"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "3",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "9"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "4",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "18"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Sanitas",
+      "defaultColor": "#009fd9",
+      "defaultColorRGBA": "rgba(0, 159, 217, 0.25)",
+      "afiliados": {
+        "2017": "2168927",
+        "2018": "2365924",
+        "2019": "2462117"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "123",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "50"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "59",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "28"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "16",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "38"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "15",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "57"
+      }
+    },
+    {
+      "id": 5,
+      "name": "AlianSalud",
+      "defaultColor": "#5b9323",
+      "defaultColorRGBA": "rgba(91, 147, 35, 0.25)",
+      "afiliados": {
+        "2017": "210980",
+        "2018": "218665",
+        "2019": "237336"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "112",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "81"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "21",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "38"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "11",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "31"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "14",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "51"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Salud Total",
+      "defaultColor": "#f8f400",
+      "defaultColorRGBA": "rgba(248, 244, 0, 0.25)",
+      "afiliados": {
+        "2017": "2525337",
+        "2018": "2649043",
+        "2019": "2949045"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "241",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "57"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "12",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "27"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "5",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "24"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "91",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "352"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Nueva EPS",
+      "defaultColor": "#ed1b2f",
+      "defaultColorRGBA": "rgba(237, 27, 47, 0.25)",
+      "afiliados": {
+        "2017": "3270361",
+        "2018": "3414115",
+        "2019": "3749858"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "399",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "129"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "12",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "22"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "12",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "24"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "49",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "73"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Coomeva",
+      "defaultColor": "#00b300",
+      "defaultColorRGBA": "rgba(0, 179, 0, 0.25)",
+      "afiliados": {
+        "2017": "2265721",
+        "2018": "1953095",
+        "2019": "1480532"
+      },
+      "ranking": {
+        "total": "2",
+        "oportunidad": "2",
+        "satisfaccion": "3",
+        "acceso": "2"
+      },
+      "demorasMedicamentos": {
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS NO-POS.": "274",
+        "DEMORA DE LA AUTORIZACION DE MEDICAMENTOS POS": "121"
+      },
+      "inconsistenciaCobros": {
+        "INCONSISTENCIA EN EL COBRO DE LA CUOTA MODERADORA": "10",
+        "INCONSISTENCIA EN EL COBRO DEL COPAGO": "18"
+      },
+      "dificultadComunicacion": {
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS DE ATENCION AL CLIENTE": "8",
+        "DIFICULTAD DE COMUNICACION CON LAS LINEAS PARA CITAS": "13"
+      },
+      "demoraAutorizaciones": {
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS NO-POS.": "23",
+        "DEMORA DE LA AUTORIZACION DE PROCEDIMIENTOS POS": "61"
+      }
+    }
+  ],
+  "variables": [
+    {
+      "id": 1,
+      "name": "Cantidad de afiliados por año",
+      "merge": true,
+      "key": "afiliados",
+      "chart": "line"
+    },
+    {
+      "id": 3,
+      "name": "PQRS por demoras relacionadas con medicamentos",
+      "merge": false,
+      "key": "demorasMedicamentos",
+      "chart": "pie"
+    },
+    {
+      "id": 4,
+      "name": "PQRS por Inconsistencias en cobros",
+      "merge": false,
+      "key": "inconsistenciaCobros",
+      "chart": "pie"
+    },
+    {
+      "id": 5,
+      "name": "PQRS por Dificultad de comunicación",
+      "merge": false,
+      "key": "dificultadComunicacion",
+      "chart": "pie"
+    },
+    {
+      "id": 6,
+      "name": "PQRS por Demora en autorizaciones de Procedimientos",
+      "merge": false,
+      "key": "demoraAutorizaciones",
+      "chart": "pie"
+    }
+  ]
 }

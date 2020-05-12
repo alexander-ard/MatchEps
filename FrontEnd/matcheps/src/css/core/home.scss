@@ -1,9 +1,26 @@
 .home {
-  background-color: $primary;
-  height: 100%;
-  
-  &__btnStart {
-    margin-top: 1em;
-    font-size: 3em;
+  display: flex;
+  border-radius: 15px;
+
+  @include media('<=phone') {
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+
+  &__match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__btn {
+      font-size: 3em;
+      padding: 1em;
+      border-radius: 15px;
+      border: 4px solid $primary;
+      background-color: $fifth;
+      color: $primary;
+      height: max-content;
+    }
   }
 }

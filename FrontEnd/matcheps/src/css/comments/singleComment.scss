@@ -1,0 +1,40 @@
+
+.comment {
+    display: flex;
+    border: 1px solid $light-gray;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 10px;
+    flex-direction: column;
+
+    &__author {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    &__body {
+        padding-left: 3em;
+        font-size: 1.5em;
+
+        @include media('<=phone') {
+        padding-left: 0;
+        }
+    }
+
+    &__actions {
+        padding-top: 1em;
+
+        &__btn {
+            font-size: 1.25em;
+            border: 1px solid $primary;
+            border-radius: 15px;
+            background-color: transparent;
+            color: $primary;
+            padding: 0.2em;
+
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+}

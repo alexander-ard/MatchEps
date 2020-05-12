@@ -1,18 +1,18 @@
 <template>
-  <div class="nav" :data-home="currentRoute === 'home'">
+  <div class="nav" :data-home="currentRoute === 'landing'">
     <button class="nav__btnSidebar" @click="toogleMenu">
       <i class="fas fa-bars"></i>
     </button>
 
-    <div class="nav__btnGroup" :class="{ '--hidden': hiddenMenu }">
+    <!-- <div class="nav__btnGroup" :class="{ '--hidden': hiddenMenu }">
       <router-link
         tag="button"
         :to="'/'"
         class="nav__btnGroup__btn"
-        :class="{ '--active': currentRoute === 'home' }"
+        :class="{ '--active': currentRoute === 'landing' }"
         @click="hideMenu"
       >
-        <span @click="hideMenu">Home</span>
+        <span @click="hideMenu">Landing</span>
       </router-link>
 
       <router-link
@@ -33,7 +33,7 @@
       >
         <span @click="hideMenu">Opiniones</span>
       </router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       logo,
-      hiddenMenu: false,
+      hiddenMenu: true,
     };
   },
   computed: {

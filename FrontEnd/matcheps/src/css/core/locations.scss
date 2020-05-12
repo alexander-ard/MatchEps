@@ -1,0 +1,10 @@
+
+.locations {
+    display: flex;
+    flex-direction: row;
+
+    &__map {
+        display: flex;
+        flex: 1;
+    }
+}

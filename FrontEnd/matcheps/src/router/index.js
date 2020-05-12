@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Landing from '@components/core/Landing';
 import Home from '@components/core/Home';
 import EpsMatch from '@components/core/EpsMatch';
-import EpsSearch from '@components/core/EpsSearch';
+import Locations from '@components/core/Locations';
+import Comments from '@components/comments/Comments';
 
 Vue.use(Router);
 
@@ -10,13 +12,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'landing',
+      component: Landing,
     },
     {
-      path: '/eps-search',
-      name: 'eps-search',
-      component: EpsSearch,
+      path: '/home',
+      name: 'home',
+      component: Home,
     },
     {
       path: '/eps-match',
@@ -24,5 +26,15 @@ export default new Router({
       component: EpsMatch,
       props: true,
     },
+    {
+      path: '/comments',
+      name: 'comments',
+      component: Comments
+    }, ,
+    {
+      path: '/locations',
+      name: 'locations',
+      component: Locations
+    },    
   ],
 });

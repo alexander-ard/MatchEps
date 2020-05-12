@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import api from '@utils/api.js';
+import api from '@utils/api';
 import Choices from '@components/shared/Choices';
 
 export default {

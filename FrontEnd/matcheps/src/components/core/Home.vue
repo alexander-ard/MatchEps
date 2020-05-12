@@ -1,60 +1,70 @@
 <template>
   <div class="home">
-    <Carousel :data="carouselData" />
-    <div class="main__btnWrapper">
-     <router-link
-        tag="button"
-        class="main__btnWrapper__btn --secondary home__btnStart"
-        :to="'/eps-search'"
-      >
-        Iniciar
+    <ListFilter @change="updateSelectedEps" :title="'Seleccione las EPS'" :list="epsList" v-if="epsList" />
+    <ListFilter @change="updateSelectedVar" :title="'Seleccione las Variables'" :list="varList" v-if="varList" />
+    <div class="home__match">
+      <button type="button" class="home__match__btn" @click="match($event)">
+        ¡Match!
         <i class="fas fa-play"></i>
-      </router-link>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import Carousel from '@components/shared/Carousel';
-import dataImg1 from '@images/data-1.png';
-import dataImg2 from '@images/data-2.png';
-import dataImg3 from '@images/data-3.png';
+import ListFilter from '@components/shared/ListFilter';
+import api from '@utils/api.js';
 
 export default {
-  name: 'home',
-  components: {
-    Carousel,
-  },
+  name: 'Home',
+  components: { ListFilter },
   data() {
     return {
-      carouselData: {
-        items: [
-          {
-            title: 'Match EPS',
-            body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat.`,
-            image: dataImg1,
-            class: 'carousel__carouselItem__text__title',
-          },
-          {
-            title:
-              'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.`,
-            image: dataImg2,
-          },
-          {
-            title:
-              'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            body: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.`,
-            image: dataImg3,
-          },
-        ],
-      },
+      epsList: [],
+      selectedEps: [],
+      selectedVar: [],
+      varList: [],
     };
+  },
+  mounted() {
+    this.getEpsList();
+    this.getVarList();
+  },
+  computed: {
+    routerTo() {
+      return {
+        name: 'eps-match',
+        params: {
+          eps: this.selectedEps,
+          var: this.selectedVar,
+        },
+      };
+    },
+  },
+  methods: {
+    async getEpsList() {
+      this.epsList = await api.get('eps');
+      this.epsList = this.epsList.map((eps) => ({
+        id: eps.id,
+        name: eps.name,
+      }));
+    },
+    async getVarList() {
+      this.varList = await api.get('variables');
+    },
+    updateSelectedEps(selected) {
+      this.selectedEps = selected;
+    },
+    updateSelectedVar(selected) {
+      this.selectedVar = selected;
+    },
+    match(evt) {
+      if (!this.selectedEps.length || !this.selectedVar.length) {
+        this.$alertify.alert('Error', 'Por favor seleccione las EPS y variables para comparar.');
+      } else {
+        this.$router.push(this.routerTo);
+      }
+    },
   },
 };
 </script>

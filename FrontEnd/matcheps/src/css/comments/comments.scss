@@ -1,0 +1,44 @@
+.comments {
+  display: flex;
+  flex-direction: row;
+
+  &__select {
+    font-size: 3em;
+    display: block;
+    flex: 1;
+    margin: auto;
+    text-align: center;
+  }
+
+  &__body {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+
+    &__list {
+      padding: 1em;
+      &__title {
+        font-size: 2em;
+        color: $primary;
+      }
+    }
+
+    &__new {
+      padding: 1em;
+      &__title {
+        font-size: 1.5em;
+        color: $primary;
+      }
+    }
+
+    &__empty {
+      font-size: 2em;
+      color: $primary;
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+    }
+  }
+}

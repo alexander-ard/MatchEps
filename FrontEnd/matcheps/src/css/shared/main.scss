@@ -10,26 +10,39 @@ html {
   color: $text-color;
 }
 
-input,
+button {
+  cursor: pointer;
+
+  &.plain {
+    border: none;
+    background-color: transparent;
+  }
+}
+
+input[type="text"],
 select,
 textarea {
   display: block;
-  width: 100% !important; //important for choices.js
-  min-width: 100% !important; //important for choices.js
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background-color: $white;
   color: $text-color;
-  border: 1px solid $light-gray;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: none;
 
-  &:focus {
-    border-color: $primary;
-    box-shadow: 0 0 0 3px rgba($primary, 0.25);
+  &:not(.plain) {
+    border: 1px solid $light-gray;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.25);
+    }
   }
+
 }
+
 
 ::-webkit-scrollbar {
   width: 12px;

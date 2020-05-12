@@ -1,0 +1,46 @@
+.newComment {
+  margin: 1em;
+  display: flex;
+  border: 1px solid $light-gray;
+  border-radius: 0.25rem;
+  max-height: 5em;
+  font-size: 1.25em;
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &__anon {
+      display: flex;
+      flex-direction: row;
+
+      * {
+        display: flex;
+      }
+    }
+
+    &__author {
+      width: 100%;
+      display: flex;
+    }
+
+    &__body {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  &__charsLeft {
+    margin: auto;
+    padding: 0.5em;
+  }
+
+  &__send {
+    border: none;
+    background-color: $primary;
+    color: $white;
+    padding: 1em;
+    font-size: 1em;
+  }
+}

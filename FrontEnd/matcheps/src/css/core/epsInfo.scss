@@ -3,7 +3,7 @@
   flex: 1;
   flex-direction: column;
   border-radius: 25px;
-  margin: 5px;
+  padding: 0 1em;
 
   @include media('<=phone') {
     width: 100vh;

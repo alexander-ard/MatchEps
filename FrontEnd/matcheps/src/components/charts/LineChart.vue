@@ -7,13 +7,12 @@ export default {
   mounted() {
     const defaultOptions = {
       responsive: true,
-      maintainAspectRatio: false,
-      fill: false,
       steppedLine: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: this.title,
-        fontSize: 18
+        fontSize: 36
       },
     };
 
